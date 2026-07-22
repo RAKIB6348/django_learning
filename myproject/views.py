@@ -50,7 +50,7 @@ def _validate_role(user, role):
 
 def _redirect_to_dashboard(user):
     if user.is_superuser or user.is_staff:
-        return redirect("admin_dashboard")
+        return redirect("admin:index")
     if hasattr(user, "teacher_profile"):
         return redirect("teacher_dashboard")
     if hasattr(user, "student_profile"):
